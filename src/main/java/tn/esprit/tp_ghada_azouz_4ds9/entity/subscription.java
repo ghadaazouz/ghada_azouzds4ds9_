@@ -1,15 +1,22 @@
 package tn.esprit.tp_ghada_azouz_4ds9.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-public class subscription {
+public class Subscription {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long numSub;
-    private TypeSubscription typeSub;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long IdSubscription;
+
+    @Enumerated(EnumType.STRING)
+    private TypeSubscription support;
 
 }
