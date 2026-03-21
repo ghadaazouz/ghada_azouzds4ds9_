@@ -1,5 +1,6 @@
 package tn.esprit.wiembenmsahel4ds9tp.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,14 +20,14 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long numCourse;
+    private Long numCourse;
 
     private Integer level;
     @Enumerated(EnumType.STRING)
     private TypeCourse typeCourse;
     @Enumerated(EnumType.STRING)
     private Support support;
-    private float price;
+    private Float price;
     private Integer timeSlot;
 
     @OneToMany(mappedBy="course")

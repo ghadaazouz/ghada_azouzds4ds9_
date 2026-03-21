@@ -14,7 +14,7 @@ public class RegistrationController {
 
     IRegistrationService registrationService;
 
-    @PostMapping("/addPiste")
+    @PostMapping("/addRegistration")
     Registration addRegistration(@RequestBody Registration registration) {
         return registrationService.addRegistration(registration);
     }

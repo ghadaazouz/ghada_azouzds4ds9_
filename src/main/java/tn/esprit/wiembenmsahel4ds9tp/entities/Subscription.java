@@ -18,11 +18,11 @@ public class Subscription {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long numSub;
+    private Long numSub;
 
-    LocalDate startDate;
-    LocalDate endDate;
-    float price;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private Float price;
     @Enumerated(EnumType.STRING)
     TypeSubscription typeSub;
 
