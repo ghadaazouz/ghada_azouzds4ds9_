@@ -14,12 +14,12 @@ public class PisteController {
 
     IPisteService pisteService;
 
-    @PostMapping("/updatePiste")
+    @PostMapping("/addPiste")
     Piste addPiste(@RequestBody Piste piste) {
         return pisteService.addPiste(piste);
     }
 
-    @PutMapping("/addPiste")
+    @PutMapping("/updatePiste")
     Piste updatePiste(@RequestBody Piste piste) {
         return pisteService.updatePiste(piste);
     }
@@ -34,8 +34,9 @@ public class PisteController {
         return pisteService.getPiste(id);
     }
 
-    @GetMapping("/getPistes/{id}")
+    @GetMapping("/getPistes")
     List<Piste> getPistes() {
         return pisteService.getAllPistes();
     }
+
 }

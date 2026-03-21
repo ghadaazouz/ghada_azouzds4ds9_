@@ -14,12 +14,12 @@ public class SubscriptionController {
 
     ISubscriptionService subscriptionService;
 
-    @PostMapping("/updateSubscription")
+    @PostMapping("/addSubscription")
     Subscription addSubscription(@RequestBody Subscription subscription) {
         return subscriptionService.addSubscription(subscription);
     }
 
-    @PutMapping("/addSubscription")
+    @PutMapping("/updateSubscription")
     Subscription updateSubscription(@RequestBody Subscription subscription) {
         return subscriptionService.updateSubscription(subscription);
     }
@@ -34,8 +34,9 @@ public class SubscriptionController {
         return subscriptionService.getSubscription(id);
     }
 
-    @GetMapping("/getSubscriptions/{id}")
+    @GetMapping("/getSubscriptions")
     List<Subscription> getSubscriptions() {
         return subscriptionService.getAllSubscriptions();
     }
+
 }

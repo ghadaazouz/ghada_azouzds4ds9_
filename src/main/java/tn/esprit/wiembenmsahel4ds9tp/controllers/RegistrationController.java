@@ -14,12 +14,12 @@ public class RegistrationController {
 
     IRegistrationService registrationService;
 
-    @PostMapping("/updateRegistration")
+    @PostMapping("/addPiste")
     Registration addRegistration(@RequestBody Registration registration) {
         return registrationService.addRegistration(registration);
     }
 
-    @PutMapping("/addPiste")
+    @PutMapping("/updateRegistration")
     Registration updateRegistration(@RequestBody Registration registration) {
         return registrationService.updateRegistration(registration);
     }
@@ -34,8 +34,9 @@ public class RegistrationController {
         return registrationService.getRegistration(id);
     }
 
-    @GetMapping("/getRegistrations/{id}")
+    @GetMapping("/getRegistrations")
     List<Registration> getRegistrations() {
         return registrationService.getAllRegistrations();
     }
+
 }

@@ -14,12 +14,12 @@ public class InstructorController {
 
     IInstructorService instructorService;
 
-    @PostMapping("/updateInstructor")
+    @PostMapping("/addInstructor")
     Instructor addInstructor(@RequestBody Instructor instructor) {
         return instructorService.addInstructor(instructor);
     }
 
-    @PutMapping("/addInstructor")
+    @PutMapping("/updateInstructor")
     Instructor updateInstructor(@RequestBody Instructor instructor) {
         return instructorService.updateInstructor(instructor);
     }
@@ -34,7 +34,7 @@ public class InstructorController {
         return instructorService.getInstructor(id);
     }
 
-    @GetMapping("/getInstructors/{id}")
+    @GetMapping("/getInstructors")
     List<Instructor> getInstructors() {
         return instructorService.getAllInstructors();
     }

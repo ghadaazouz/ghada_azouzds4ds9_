@@ -14,12 +14,12 @@ public class CourseController {
 
     ICourseService courseService;
 
-    @PostMapping("/updateCourse")
+    @PostMapping("/addCourse")
     Course addCourse(@RequestBody Course course) {
         return courseService.addCourse(course); // appel de l'interface dans l'interface ICourseService
     }
 
-    @PutMapping("/addCourse")
+    @PutMapping("/updateCourse")
     Course updateCourse(@RequestBody Course course) {
         return courseService.updateCourse(course); // appel de l'interface dans l'interface ICourseService
     }
@@ -34,7 +34,7 @@ public class CourseController {
         return courseService.getCourse(id);
     }
 
-    @GetMapping("/getCourses/{id}")
+    @GetMapping("/getCourses")
     List<Course> getCourses() {
         return courseService.getAllCourses();
     }

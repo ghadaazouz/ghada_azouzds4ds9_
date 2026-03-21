@@ -14,12 +14,12 @@ public class SkierController {
 
     ISkierService skierService;
 
-    @PostMapping("/updateSkier")
+    @PostMapping("/addSkier")
     Skier addSkier(@RequestBody Skier skier) {
         return skierService.addSkier(skier);
     }
 
-    @PutMapping("/addSkier")
+    @PutMapping("/updateSkier")
     Skier updateSkier(@RequestBody Skier skier) {
         return skierService.updateSkier(skier);
     }
@@ -34,8 +34,9 @@ public class SkierController {
         return skierService.getSkier(id);
     }
 
-    @GetMapping("/getSkiers/{id}")
+    @GetMapping("/getSkiers")
     List<Skier> getSkiers() {
         return skierService.getAllSkiers();
     }
+
 }
