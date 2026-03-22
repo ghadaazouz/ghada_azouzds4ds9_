@@ -43,4 +43,5 @@ public class PisteServiceImpl implements IPisteService {
     public List<Piste> getAllPistes() {
         return pisteRepository.findAll();
     }
+
 }

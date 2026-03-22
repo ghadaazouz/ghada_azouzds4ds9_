@@ -3,9 +3,12 @@ package tn.esprit.wiembenmsahel4ds9tp.controllers;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.wiembenmsahel4ds9tp.entities.Subscription;
+import tn.esprit.wiembenmsahel4ds9tp.entities.enumerate.TypeSubscription;
 import tn.esprit.wiembenmsahel4ds9tp.services.interfaces.ISubscriptionService;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/subscription")
@@ -37,6 +40,19 @@ public class SubscriptionController {
     @GetMapping("/getSubscriptions")
     List<Subscription> getSubscriptions() {
         return subscriptionService.getAllSubscriptions();
+    }
+
+    @GetMapping("/byType/{type}")
+    public Set<Subscription> getSubscriptionByType(@PathVariable TypeSubscription type) {
+        return subscriptionService.getSubscriptionByType(type);
+    }
+
+    @GetMapping("/byDates")
+    public List<Subscription> getSubscriptionsByDates(
+            @RequestParam LocalDate startDate,
+            @RequestParam LocalDate endDate) {
+
+        return subscriptionService.retrieveSubscriptionsByDates(startDate, endDate);
     }
 
 }

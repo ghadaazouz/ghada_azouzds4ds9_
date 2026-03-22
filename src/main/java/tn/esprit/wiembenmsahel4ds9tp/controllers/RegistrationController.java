@@ -39,4 +39,28 @@ public class RegistrationController {
         return registrationService.getAllRegistrations();
     }
 
+    @PostMapping("/addRegistrationAndAssignToSkier/{numSkier}")
+    public Registration addRegistrationAndAssignToSkier(
+            @RequestBody Registration registration,
+            @PathVariable Long numSkier) {
+
+        return registrationService.addRegistrationAndAssignToSkier(registration, numSkier);
+    }
+
+    @PutMapping("/assignRegistrationToCourse/{numRegistration}/{numCourse}")
+    public Registration assignRegistrationToCourse(
+            @PathVariable Long numRegistration,
+            @PathVariable Long numCourse) {
+
+        return registrationService.assignRegistrationToCourse(numRegistration, numCourse);
+    }
+
+    @PostMapping("/addFullRegistration/{numSkier}/{numCourse}")
+    public Registration addFullRegistration(@RequestBody Registration registration,
+                                            @PathVariable Long numSkier,
+                                            @PathVariable Long numCourse) {
+
+        return registrationService.addRegistrationAndAssignToSkierAndCourse(registration, numSkier, numCourse);
+    }
+
 }

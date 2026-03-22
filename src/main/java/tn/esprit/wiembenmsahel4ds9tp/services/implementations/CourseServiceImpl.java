@@ -44,4 +44,5 @@ public class CourseServiceImpl implements ICourseService {
     public List<Course> getAllCourses() {
         return courseRepository.findAll();
     }
+
 }
