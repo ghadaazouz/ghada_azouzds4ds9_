@@ -1,0 +1,17 @@
+package tn.esprit.tp_ghada_azouz_4ds9.services.interfaces;
+
+import tn.esprit.tp_ghada_azouz_4ds9.entities.Registration;
+
+import java.util.List;
+
+public interface IRegistrationService {
+    Registration addRegistration(Registration registration);
+    Registration updateRegistration(Registration registration);
+    void deleteRegistration(Long id);
+    Registration getRegistration(Long id);
+    List<Registration> getAllRegistrations();
+
+    Registration addRegistrationAndAssignToSkier(Registration registration, Long numSkier);
+    Registration assignRegistrationToCourse(Long numRegistration, Long numCourse);
+    Registration addRegistrationAndAssignToSkierAndCourse(Registration registration, Long numSkier, Long numCourse);
+}
